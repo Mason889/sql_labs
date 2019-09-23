@@ -1,28 +1,67 @@
+INSERT INTO empgroup(empgroup_name) VALUES
+('OPS');
+INSERT INTO empgroup(empgroup_name) VALUES
+('Finance');
+-----------------------------------------------------------------
+INSERT INTO department_kind(department_kind_name) VALUES
+('Humanitarian');
+INSERT INTO department_kind(department_kind_name) VALUES
+('Engineering');
+INSERT INTO department_kind(department_kind_name) VALUES
+('Supply/Administration');
+-----------------------------------------------------------------
 INSERT INTO department(department_name, department_kind) VALUES
-('NOC', 'OPS');
+('FL', 1);
 INSERT INTO department(department_name, department_kind) VALUES
-('PythonDevs', 'Engineering');
+('IPT', 2);
 INSERT INTO department(department_name, department_kind) VALUES
-('Front-end', 'Engineering');
+('IASA', 2);
 INSERT INTO department(department_name, department_kind) VALUES
-('Back-end', 'Engineering');
-INSERT INTO department(department_name, department_kind) VALUES
-('QA', 'QA/QC');
-INSERT INTO department(department_name, department_kind) VALUES
-('QC', 'QA/QC');
+('IMQE', 3);
 ------------------------------------------------------------------
-INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_hb_date, employee_address, employee_position, employee_department, employee_date_hiring) 
+INSERT INTO position(position_name) VALUES
+('Secretary');
+INSERT INTO position(position_name) VALUES
+('Lecturer');
+INSERT INTO position(position_name) VALUES
+('Docent');
+------------------------------------------------------------------
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
-('Mason', 'Coleman', 'M', '1980-10-09', '9th Str.', 'CTO', 'OPS', '2012-04-28');
-INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_hb_date, employee_address, employee_position, employee_department, employee_date_hiring) 
+('Mason', 'Coleman', 'M', '9th Str.', '1980-10-09', '2012-04-28', 2, 1, 3);
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
-('John', 'Clapton', 'M', '1989-04-05', 'Backer Str.', 'Sr. Python Software ', 'Engineering', '2009-03-12');
-INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_hb_date, employee_address, employee_position, employee_department, employee_date_hiring) 
+('Anna', 'Petrovna', 'F', '10th Str.', '1990-06-12', '2015-03-10', 1, 1, 2);
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
-('Alex', 'Cason', 'M', '1984-12-20', '12th Str.', 'Sr. Fullstack developer', 'Engineering', '2014-06-10');
-INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_hb_date, employee_address, employee_position, employee_department, employee_date_hiring) 
+('Maria', 'Schmal', 'F', '9th/24 Str.', '1976-12-10', '2010-07-01', 4, 2, 1);
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
-('Anna', 'Camerron', 'F', '1995-12-20', '20th Str.', 'DevOps Engineering', 'OPS', '2015-03-14');
-INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_hb_date, employee_address, employee_position, employee_department, employee_date_hiring) 
+('Alexey', 'Vasylenko', 'M', '12th Str.', '1982-02-20', '2005-04-25', 4, 2, 1);
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
-('Amelia', 'Johnson', 'F', '2003-04-12', '27th Str.', 'NONE', 'NONE', GETDATE());
+('Nikita', 'Topchiy', 'M', '148th Str.', '1990-03-12', '2014-09-14', 3, 1, 2);
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_date_fired, employee_department, employee_group, employee_position) 
+VALUES 
+('Alexey', 'Novikov', 'M', 'Victory Str.', '1980-05-24', '2011-08-29', '2015-10-25', 1, 1, 2);
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
+VALUES 
+('Anna', 'Vashylevska', 'F', 'Fine Str.', '1994-05-24', '2018-04-10', 1, 1, 2);
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
+VALUES 
+('Hanna', 'Tired', 'F', '11 Str.', '1987-06-24', '2014-03-02', 4, 2, 1);
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_date_fired, employee_department, employee_group, employee_position) 
+VALUES 
+('Sam', 'Thompson', 'M', 'Victory Str.', '1982-05-24', '2012-03-20', '2015-10-25', 1, 1, 2);
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
+VALUES 
+('Herbert', 'Lompsone', 'M', '14 Str.', '1990-02-01', '2017-09-04', 4, 2, 1);
+
+--INSERT empgroup(empgroup_name)
+--VALUES ('test');
+--INSERT position(position_name) VALUES ('test');
+--INSERT department_kind(department_kind_name) VALUES ('abcd');
+--INSERT department(department_name, department_kind) VALUES ('test',1);
+
+--INSERT employee(employee_name, employee_middlename, employee_gender, employee_hb_date, employee_date_hiring, employee_date_fired, employee_address, employee_group, employee_department, employee_position) 
+--VALUES ('as', 'ds', 'M', '2010-04-25', '2018-04-23', '2017-02-28', 'bak str', 1, 1, 1);

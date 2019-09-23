@@ -1,10 +1,24 @@
-DROP TABLE employee, department
+DROP TABLE employee, department, position, empgroup, department_kind
 
+CREATE TABLE department_kind(
+	department_kind_id INT IDENTITY PRIMARY KEY NOT NULL,
+	department_kind_name VARCHAR(30) NOT NULL
+);
 
 CREATE TABLE department (
 	department_id INT IDENTITY PRIMARY KEY NOT NULL,
-	department_name VARCHAR(30) NOT NULL,
-	department_kind VARCHAR(20) NOT NULL
+	department_kind INT NOT NULL,
+	department_name VARCHAR(30) NOT NULL
+	CONSTRAINT fk_department_kind FOREIGN KEY (department_kind) REFERENCES department_kind(department_kind_id)
+);
+
+CREATE TABLE position (
+	position_id INT IDENTITY PRIMARY KEY NOT NULL,
+	position_name VARCHAR(30) NOT NULL
+);
+CREATE TABLE empgroup (
+	emgroup_id INT IDENTITY PRIMARY KEY NOT NULL,
+	empgroup_name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE employee (
@@ -15,11 +29,13 @@ CREATE TABLE employee (
 	CONSTRAINT employee_gender_check CHECK(employee_gender LIKE '[MF]'),				--- check if input data of employee gender will be 'M' (Male) or 'F' (Female)
 	employee_hb_date DATE NOT NULL,
 	employee_address VARCHAR(100) NOT NULL,
-	employee_position VARCHAR(40) NOT NULL,
-	employee_department_id INT,
-	employee_department VARCHAR (30) NOT NULL,
+	employee_position INT NOT NULL,														-- future foreign key on position table
+	employee_department INT NOT NULL,													-- future foreign key on department table
+	employee_group INT NOT NULL,														-- future foreign key on empgroup table
 	employee_date_hiring DATE NOT NULL,
-	employee_date_fired DATE,
-	---
+	employee_date_fired DATE NULL,
+	CONSTRAINT fk_employee_position FOREIGN KEY (employee_position) REFERENCES position(position_id),
+	CONSTRAINT fk_employee_department FOREIGN KEY (employee_department) REFERENCES department(department_id),
+	CONSTRAINT fk_employee_group FOREIGN KEY (employee_group) REFERENCES empgroup(emgroup_id)
 );
 
