@@ -1,0 +1,9 @@
+SELECT subscriber_name, subscriber_middle_name, subscriber_phone_number, department_name FROM [lab_db_var7].[dbo].[subscriber] subs, [lab_db_var7].[dbo].[department] dep WHERE subs.subscriber_depar = dep.department_id ORDER BY department_name
+--subscriber_depar =(SELECT dep_space_kind FROM [lab_db_var7].[dbo].[dep_space] WHERE dep_space_department_id = 1)		-- first task
+SELECT subscriber_name, subscriber_middle_name, subscriber_phone_number, dep_space_name FROM [lab_db_var7].[dbo].[subscriber] subs, [lab_db_var7].[dbo].[dep_space] ds WHERE subs.subscriber_depar = ds.dep_id ORDER BY dep_space_name
+SELECT COUNT(subscriber_name) AS number_of_subscribers, department_name FROM [lab_db_var7].[dbo].[subscriber] subs, [lab_db_var7].[dbo].[department] dep WHERE subs.subscriber_depar = dep.department_id GROUP BY department_name
+SELECT COUNT(subscriber_name) AS number_of_subscribers, dep_space_name FROM [lab_db_var7].[dbo].[subscriber] subs, [lab_db_var7].[dbo].[dep_space] ds WHERE subs.subscriber_depar = ds.dep_id GROUP BY dep_space_name
+--SELECT subscriber_name, subscriber_middle_name, subscriber_phone_number FROM [lab_db_var7].[dbo].[subscriber] WHERE subscriber_depar =(SELECT department_kind FROM [lab_db_var7].[dbo].[department] WHERE department_id = 2)				-- second task
+--SELECT COUNT(*) AS count_of_employee FROM [lab_db_var7].[dbo].[subscriber]  WHERE subscriber_depar =(SELECT dep_space_kind FROM [lab_db_var7].[dbo].[dep_space] WHERE dep_space_department_id = 1) 
+--SELECT COUNT(*) AS count_of_clients FROM [lab_db_var7].[dbo].[subscriber]  WHERE subscriber_depar =(SELECT department_kind FROM [lab_db_var7].[dbo].[department] WHERE department_id = 2)
+ 
