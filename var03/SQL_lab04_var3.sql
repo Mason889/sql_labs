@@ -1,21 +1,22 @@
 SELECT 
 	employee_name, employee_middlename, department_name, department_kind_name
 FROM 
-	[lab_db_var3].[dbo].[employee] emp, [lab_db_var3].[dbo].[department] dep, [lab_db_var3].[dbo].[department_kind] dep_kind
-WHERE
-	emp.employee_department = dep.department_id 
-	AND dep.department_kind = dep_kind.department_kind_id
+	[lab_db_var3].[dbo].[department] dep
+	INNER JOIN
+	[lab_db_var3].[dbo].[employee] emp ON emp.employee_department = dep.department_id
+	INNER JOIN
+	[lab_db_var3].[dbo].[department_kind] dep_kind ON dep.department_kind = dep_kind.department_kind_id
+--	AND dep.department_name IN ('FL')	 additional for first task where i should output info about persons on each department
 ORDER BY 
 	department_name 
-	-- AND dep.department_name IN ('FL') additional for first task where i should output info about persons on each department
+	
 ------------------
 SELECT 
 	department_name, AVG(DATEDIFF(YEAR, employee_hb_date, GETDATE())) AS age
 FROM
 	[lab_db_var3].[dbo].[employee] emp
 LEFT OUTER JOIN
-	[lab_db_var3].[dbo].[department] dep 
-	ON emp.employee_department = dep.department_id
+	[lab_db_var3].[dbo].[department] dep ON emp.employee_department = dep.department_id
 GROUP BY department_name
 -------------------
 SELECT 
@@ -35,13 +36,20 @@ ORDER BY
 
 
 -- lab-05
-SELECT top(1)
+SELECT 
 	dep.department_name, em_with_max.CE
 FROM 
 	department dep --WHERE department_id = (SELECT employee_department FROM [lab_db_var3].[dbo].[employee] GROUP BY employee_department HAVING )
 	INNER JOIN 
-	(SELECT employee.employee_department, COUNT(employee.employee_id) AS CE FROM employee GROUP BY employee.employee_department) AS em_with_max ON dep.department_id = em_with_max.employee_department
-ORDER BY em_with_max.CE DESC
+	(SELECT employee.employee_department, COUNT(employee.employee_id) AS CE FROM employee 
+	GROUP BY employee.employee_department) AS em_with_max ON dep.department_id = em_with_max.employee_department
+	GROUP BY dep.department_name, em_with_max.CE
+	HAVING CE >= all(select count(employee.employee_id) as CE from employee
+	group by employee.)
+--WHERE
+--	em_with_max.CE = (SELECT TOP(1) COUNT(employee.employee_id) AS CE FROM employee 
+--	GROUP BY employee.employee_department ORDER BY COUNT(employee.employee_id) desc)
+--ORDER BY em_with_max.CE DESC
 -------------------------------
 SELECT TOP(1)
 	dep.department_name, emp_hb_max.emp_hb

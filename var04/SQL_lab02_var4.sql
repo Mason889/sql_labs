@@ -9,12 +9,3 @@ ALTER TABLE employee
 
 --EXEC SP_RENAME 'employee', 'employee_var03';
 --EXEC SP_RENAME 'employee_var03', 'employee';		    last point of LAB work
-
-
-
-
-
-
-
-
-

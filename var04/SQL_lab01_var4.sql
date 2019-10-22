@@ -45,3 +45,4 @@ CREATE TABLE employee (
 	CONSTRAINT fk_employee_group FOREIGN KEY (employee_group) REFERENCES empgroup(emgroup_id)
 );
 
+
