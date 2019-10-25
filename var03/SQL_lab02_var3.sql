@@ -1,3 +1,7 @@
+use lab_db_var3
+go
+
+
 ALTER TABLE employee
 	ADD CONSTRAINT at_employee_date_hiring_valid CHECK (employee_date_fired > employee_date_hiring);
 ALTER TABLE employee

@@ -1,3 +1,7 @@
+use lab_db_var3
+go
+
+
 DROP TABLE employee, department, position, empgroup, department_kind
 
 CREATE TABLE department_kind(
