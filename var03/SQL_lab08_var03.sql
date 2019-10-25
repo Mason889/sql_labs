@@ -30,8 +30,21 @@ create trigger trigger_first
 	RETURN   
 	END;  
 	GO  
-	
 
+drop trigger trigger_second
+go
+
+create trigger trigger_second
+	on employee 
+		after update
+	as
+	if exists (select emp.employee_date_fired from employee emp where emp.employee_date_fired <> '' and emp.Single <> 'Yes')
+	begin 
+	update employee set Single = 'Yes' where employee_id = (select employee_id emp from employee emp where emp.Single <> 'Yes' and emp.employee_date_fired <> '')
+	print('dariva');
+	select * from fired_emp;
+	return 
+	end;
 
 /*   EXEC msdb.dbo.sp_send_dbmail  
         @profile_name = 'admin',  

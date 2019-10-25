@@ -25,4 +25,6 @@ go
 exec lab_task 3
 go
 
+
+
 --EXEC What_DB_is_this 0;

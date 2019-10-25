@@ -45,18 +45,18 @@ VALUES
 INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
 ('Nikita', 'Topchiy', 'M', '148th Str.', '1990-03-12', '2014-09-14', 3, 1, 2);
-INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_date_fired, employee_department, employee_group, employee_position) 
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_date_fired, employee_department, employee_group, employee_position, Single) 
 VALUES 
-('Alexey', 'Novikov', 'M', 'Victory Str.', '1980-05-24', '2011-08-29', '2015-10-25', 1, 1, 2);
+('Alexey', 'Novikov', 'M', 'Victory Str.', '1980-05-24', '2011-08-29', '2015-10-25', 1, 1, 2, 'Yes');
 INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
 ('Anna', 'Vashylevska', 'F', 'Fine Str.', '1994-05-24', '2018-04-10', 1, 1, 2);
 INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
 ('Hanna', 'Tired', 'F', '11 Str.', '1987-06-24', '2014-03-02', 4, 2, 1);
-INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_date_fired, employee_department, employee_group, employee_position) 
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_date_fired, employee_department, employee_group, employee_position, Single) 
 VALUES 
-('Sam', 'Thompson', 'M', 'Victory Str.', '1982-05-24', '2012-03-20', '2015-10-25', 1, 1, 2);
+('Sam', 'Thompson', 'M', 'Victory Str.', '1982-05-24', '2012-03-20', '2015-10-25', 1, 1, 2, 'Yes');
 INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
 ('Herbert', 'Lompsone', 'M', '14 Str.', '1990-02-01', '2017-09-04', 4, 2, 1);
@@ -69,9 +69,9 @@ VALUES
 INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
 ('Elisaveta', 'Pudim', 'F', 'North str.', '1994-01-20', '2018-08-05', 3, 1, 2);
-INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_date_fired, employee_department, employee_group, employee_position) 
+INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_date_fired, employee_department, employee_group, employee_position, Single) 
 VALUES 
-('Kevin', 'Spacy', 'M', 'Defeat Str.', '1987-06-12', '2011-08-30', '2016-11-08', 1, 1, 2);
+('Kevin', 'Spacy', 'M', 'Defeat Str.', '1987-06-12', '2011-08-30', '2016-11-08', 1, 1, 2, 'Yes');
 INSERT INTO employee(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
 VALUES 
 ('Kateryna', 'Sydorenko', 'F', '12th Str.', '1987-06-12', '2019-01-10', 4, 2, 1);

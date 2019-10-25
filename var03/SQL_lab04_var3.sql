@@ -45,7 +45,7 @@ FROM
 	GROUP BY employee.employee_department) AS em_with_max ON dep.department_id = em_with_max.employee_department
 	GROUP BY dep.department_name, em_with_max.CE
 	HAVING CE >= all(select count(employee.employee_id) as CE from employee
-	group by employee.)
+	group by employee.employee_department)
 --WHERE
 --	em_with_max.CE = (SELECT TOP(1) COUNT(employee.employee_id) AS CE FROM employee 
 --	GROUP BY employee.employee_department ORDER BY COUNT(employee.employee_id) desc)

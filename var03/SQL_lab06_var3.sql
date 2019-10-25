@@ -1,5 +1,9 @@
-DROP VIEW FirstView, SecondView, ThirdView
+use lab_db_var3
+go
+
+DROP VIEW FirstView, SecondView, ThirdView, fired_emp
 GO
+
 
 CREATE VIEW FirstView
 AS 
@@ -43,4 +47,15 @@ SELECT age FROM SecondView															-- access test for second point
 SELECT department_kind_name, empgroup_name FROM ThirdView ORDER BY empgroup_name	-- random test for third point
 
 
-
+-- view element for 8th lab
+go
+create view fired_emp
+as
+	select 
+		emp.employee_id, emp.employee_name, emp.employee_middlename, emp.employee_department, emp.employee_position, emp.employee_date_fired
+	from
+		employee emp
+	where
+		emp.employee_date_fired <> ''
+go
+select * from fired_emp
