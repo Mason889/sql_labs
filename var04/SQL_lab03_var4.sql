@@ -1,3 +1,6 @@
+use lab_db_var4
+go
+
 INSERT INTO empgroup(empgroup_name) VALUES
 ('OPS');
 INSERT INTO empgroup(empgroup_name) VALUES
