@@ -35,6 +35,23 @@ create proc lab_task_insert
 	@employee_position int = 1
 )
 as
+	if exists(
+	select 
+		emp.employee_id
+	from
+		employee emp
+	where
+		emp.employee_name = @employee_name 
+		and emp.employee_middlename = @employee_middlename
+		and emp.employee_gender = @employee_gender
+		and emp.employee_address = @employee_address
+		and emp.employee_hb_date = @employee_hb_date
+		and emp.employee_date_hiring = @employee_date_hiring)
+		begin
+			RAISERROR ('Error! Dublication of employee.', 16, 1);  
+		end
+	else
+		begin
 	insert into
 		employee
 		(employee_name, employee_middlename, employee_gender, employee_address, employee_hb_date, employee_date_hiring, employee_department, employee_group, employee_position) 
@@ -48,6 +65,7 @@ VALUES
 		@employee_department,
 		@employee_group,
 		@employee_position);
+		end
 go 
 
 
