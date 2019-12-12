@@ -8,8 +8,30 @@ go
 --AS   
 --SELECT DB_NAME(@ID) AS ThisDB; 
 --go
+drop proc lab_task
+go
 
+create proc lab_task (
+	@dep_space_id int
+)
+as
+	begin
+		select
+			ds.dep_space_name, count(s.subscriber_name) as number
+		from
+			subscriber s
+			inner join
+				dep_space ds
+				on ds.dep_space_id = s.subscriber_space
+		group by
+			ds.dep_space_id, ds.dep_space_name
+		having
+			ds.dep_space_id = @dep_space_id
+	end
+go
 
+exec lab_task 1
+go
 
 create proc lab_task_insert 
 (
