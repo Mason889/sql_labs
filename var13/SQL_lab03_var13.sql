@@ -33,21 +33,21 @@ VALUES
 ('Lil','Pip', 'M', '2000-05-28', 2),
 ('Kevin', 'Spacy', 'M', '2001-06-12', 3);
 
-insert into payment_state(payment_state_student, payment_state)
+insert into payment_state(payment_state_student, payment_state, payment_state_semester)
 values
-(1, 1),
-(2, 0),
-(3, 1),
-(4, 1),
-(5, 0),
-(6, 0),
-(7, 1),
-(8, 0),
-(9, 1),
-(10, 1),
-(11, 0),
-(12, 1),
-(13, 1),
-(14, 0),
-(15, 1);
+(1, 1, 1),
+(2, 0, 1),
+(3, 1, 1),
+(4, 1, 1),
+(5, 0, 1),
+(6, 0, 1),
+(7, 1, 1),
+(8, 0, 1),
+(9, 1, 1),
+(10, 1, 1),
+(11, 0, 1),
+(12, 1, 1),
+(13, 1, 1),
+(14, 0, 1),
+(15, 1, 1);
 

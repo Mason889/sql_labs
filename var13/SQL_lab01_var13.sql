@@ -26,7 +26,8 @@ create table student (
 create table payment_state (
 	payment_state_id int primary key identity not null,
 	payment_state_student int foreign key references student(student_id),
-	payment_state_specialisation int foreign key references specialisation(specialisation_id),
+	payment_state_semester int,
+--	payment_state_specialisation int foreign key references specialisation(specialisation_id),
 --	payment_state_paid date not null,
 --	payment_state_deadline date not null,
 	payment_state bit not null
